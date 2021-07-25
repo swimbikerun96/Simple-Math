@@ -1,0 +1,41 @@
+<Grid>:
+	
+	GridLayout:
+		cols: 1
+		size: root.width, root.height
+	
+		GridLayout:
+			cols: 2
+			size: root.width, root.height
+		
+			Label: 
+				text: "Please Enter a Number: "
+				font_size: 32
+		
+			TextInput:
+			#First text input, calls the function to change the output and to focus the other text input
+				id: firstNumber
+				multiline: False
+				halign: "center"
+				font_size: 100
+				focus: True
+				on_text: root.math()
+				on_text_validate: root.segue1()
+		
+			Label:
+				multiline: True
+				text: "Please Enter \nAnother Number: "
+				font_size: 32
+		
+			TextInput:
+			#Second text input, calls the function to change the output and to focus the other text input
+				id: secondNumber
+				multiline: False
+				halign: "center"
+				font_size: 100
+				on_text: root.math()
+				on_text_validate: root.segue2()
+		Label:
+			id: output
+			font_size: 40
+			text: "Simple Math Equations Will Appear Here!"
